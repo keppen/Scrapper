@@ -35,18 +35,21 @@ soup4 = bs4.BeautifulSoup(response.text, 'lxml')
 properties = {}
 
 search = soup1.td
-def check(soup):
-    count = 0
-    for element in soup.next_elements:
-        print (element)
-        count += 1
-        if count == 25:
-            break
 
-def scrap (soup):
-    if soup.name = 'td':
-        if soup.name
+#print (search,'\n', str(search),'\n', re.compile('Atomic').search(search))
+print (search.string)
+
+print ([name.name for name in search.parents if name.name == 'tbody'])
+
+def scrap_table (soup):
+    if [name for name in soup.parents if name.name == 'tbody'] is None:
+        soup = soup.next_element
+        return scrap_libre(soup)
+    else:
 
 
-check(search)
+
+
+scrap_table(search)
+
 print (properties)
